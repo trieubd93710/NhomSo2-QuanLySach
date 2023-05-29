@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+
+  <body>
+    <div class="main__bg" id="main__bg">
+      <!--Sourse code for login page-->
+      <div class="main main__signIn" id="main__signIn">
+        <div class="main__header">
+          <div class="heafer__title">
+            <h3>Sign In</h3>
+          </div>
+          <div class="heafer__close close">
+            <span>X</span>
+          </div>
+        </div>
+        <div class="main__content">
+          <form id="signIn" class="signIn">
+            <label for="">Email:</label><br />
+            <input
+              type="email"
+              name="email"
+              class="email"
+              id="email"
+              required
+            />
+            <br />
+            <label for="">Password:</label><br />
+            <input
+              type="password"
+              name="password"
+              class="password"
+              id="pass"
+              required
+            />
+          </form>
+          <input type="submit" id="sign-in" value="Login" />
+        </div>
+        <div class="main__forgot">
+          <span>Don't you account?</span
+          ><a href="#" id="btn__signIn">Register</a><br />
+          <span>Forgot password?</span><br />
+          <label for="">Remember password?</label>
+          <input type="checkbox" name="" id="check" class="check" />
+        </div>
+      </div>
+      <!--Sourse code for register page-->
+      <div class="main main__signUp" id="main__signUp">
+        <div class="main__header">
+          <div class="heafer__title">
+            <h3>Sign Up</h3>
+          </div>
+          <div class="heafer__close close">
+            <span>X</span>
+          </div>
+        </div>
+        <div class="main__content">
+          <form id="signUp" class="signUp">
+            <label for="">Email:</label><br />
+            <input
+              type="email"
+              name="email"
+              class="email"
+              id="email"
+              required
+            />
+            <br />
+            <label for="">Password:</label><br />
+            <input
+              type="password"
+              name="password"
+              class="password"
+              id="pass"
+              required
+            />
+          </form>
+          <input type="submit" id="sign-up" value="Register" />
+        </div>
+        <div class="main__forgot">
+          <span>Do you have account?</span><a href="#" id="btn__signUp">login</a
+          ><br />
+          <label for="">Remember password?</label>
+          <input type="checkbox" name="" id="check" class="check" />
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/login.js"></script>
+    <script>
+      // get id block for event block/none
+      mainSignIn = document.getElementById("main__signIn");
+      mainSignUp = document.getElementById("main__signUp");
+      // get id of event when click
+      btnSignIn = document.getElementById("btn__signIn");
+      btnSignUp = document.getElementById("btn__signUp");
+      // Here, case div Sign In block and Sign Up none
+      btnSignIn.onclick = function () {
+        mainSignUp.style.display = "block";
+        mainSignIn.style.display = "none";
+      };
+      // Here, case div Sign Up block and Sign In none
+      btnSignUp.onclick = function () {
+        mainSignIn.style.display = "block";
+        mainSignUp.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

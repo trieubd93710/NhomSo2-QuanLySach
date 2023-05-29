@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/stylesheets/base.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container__nav">
+        <div class="main">
+          <div class="nav__menu">
+
+            <div class="menu__child">
+              <div class="menu__list-child">
+                <span>Quản lý tài nguyên sách</span>
+                <% optionsChild.forEach(element => {%>
+                <div class="list__option-child">
+                  <div class="option__icon-child">
+                    <img src="<%= element.urlImg %>" alt="<%= element.id %>" />
+                  </div>
+                  <div class="option__text-child"><%= element.content %></div>
+                </div>
+                <%}); %>
+              </div>
+            </div>
+            <div class="menu__main">
+              <!-- Here, create div for option list. -->
+              <div class="menu__list">
+                <!-- Here, div of a option -->
+                <% options.forEach(option => {%>
+                <div class="list__option">
+                  <div class="option__icon">
+                    <img src="<%= option.urlImg %>" alt="<%= option.id %>" />
+                  </div>
+                  <div class="option__text"><%= option.content %></div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+          <div class="nav__exit">
+            <div class="exit__signOut"></div>
+            <div class="exit__exit"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container__main">
+        <div class="main__search">
+          <div class="search__left">4</div>
+          <div class="search__middle">
+            <input type="text" name="" class="search" id="">
+            <button id="" class="btn-search button-8">search</button>
+          </div>
+          <div class="search__right">
+            <button type="submit" class="button">SignIn</button>
+            <button type="submit" class="button">SignUp</button>
+          </div>
+        </div>
+        <div class="main__content">
+          <div class="content__slider">
+            <div class="slider__item"></div>
+          </div>
+        </div>
+        <div class="main__footer"></div>
+      </div>
+    </div>
+    <script>
+      var e = document.getElementById("selectOpt");
+      e.addEventListener("change", (event) => {
+        result = e.options[e.selectedIndex].text;
+        console.log(result);
+      });
+    </script>
+  </body>
+</html>

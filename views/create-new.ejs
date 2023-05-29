@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/stylesheets/base.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/create.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container__nav">
+        <div class="main">
+          <div class="nav__menu">
+            <div class="menu__child">
+              <div class="menu__list-child">
+                <span>Quản lý tài nguyên sách</span>
+                <% optionsChild.forEach(element => {%>
+                <div class="list__option-child">
+                  <div class="option__icon-child">
+                    <img src="<%= element.urlImg %>" alt="<%= element.id %>" />
+                  </div>
+                  <div class="option__text-child"><%= element.content %></div>
+                </div>
+                <%}); %>
+              </div>
+            </div>
+            <div class="menu__main">
+              <!-- Here, create div for option list. -->
+              <div class="menu__list">
+                <!-- Here, div of a option -->
+                <% options.forEach(option => {%>
+                <div class="list__option">
+                  <div class="option__icon">
+                    <img src="<%= option.urlImg %>" alt="<%= option.id %>" />
+                  </div>
+                  <div class="option__text"><%= option.content %></div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+          <div class="nav__exit">
+            <div class="exit__signOut"></div>
+            <div class="exit__exit"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container__main">
+        <!--===============html for book manager===================-->
+        <div class="main__content top book" id="book">
+          <h2 class="title">Quản Lý Sách</h2>
+          <div class="content__slider content__table">
+            <div class="content__input">
+              MaSach:
+              <input type="text" name="" id="" class="input" /><br />
+              TenSach:
+              <input type="text" name="" id="" class="input" /><br />
+              SoLuong:
+              <input type="text" name="" id="" class="input" /><br />
+              Gia: <input type="text" name="" id="" class="input" /><br />
+              TrangThai:
+              <input type="text" name="" id="" class="input" /><br />
+            </div>
+            <div class="content__check">
+              <div class="check__field">
+                <span class="field">Lĩnh vực</span>
+                <div class="field__item">
+                  <div class="item__option">
+                    <input
+                      type="checkbox"
+                      name=""
+                      class="fieldChecked"
+                      id="checked"
+                      value="Hello world"
+                    />
+                    <label for="checkbox1">Hello world</label>
+                  </div>
+                </div>
+              </div>
+              <div class="check__author">
+                <span class="author">Tác giả</span>
+                <div class="author__item">
+                  <div class="item__option">
+                    <input
+                      type="checkbox"
+                      name=""
+                      class="fieldChecked"
+                      id="checked"
+                      value="Hello world"
+                    />
+                    <label for="checkbox1">Hello world</label>
+                  </div>
+                </div>
+              </div>
+              <div class="check__publish">
+                <span class="publish">Nhà xuất bản</span>
+                <div class="publish__item">
+                  <div class="item__option">
+                    <input
+                      type="checkbox"
+                      name=""
+                      class="fieldChecked"
+                      id="checked"
+                      value="Hello world"
+                    />
+                    <label for="checkbox1">Hello world</label>
+                  </div>
+                </div>
+              </div>
+              <div class="check__supplier">
+                <span class="supplier">Nhà cung cấp</span>
+                <div class="supplier__item">
+                  <div class="item__option">
+                    <input
+                      type="checkbox"
+                      name=""
+                      class="fieldChecked"
+                      id="checked"
+                      value="Hello world"
+                    />
+                    <label for="checkbox1">Hello world</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content__information">
+            <div class="content__display">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="th-small"></th>
+                    <th class="th-small">MaSach</th>
+                    <th>TenSach</th>
+                    <th class="th-small">SoLuong</th>
+                    <th class="th-small">GiaMua</th>
+                    <th>LinhVuc</th>
+                    <th>TacGia</th>
+                    <th>NhaXuatBan</th>
+                    <th>NhaCungCap</th>
+                    <th class="th-small"></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--===============html for book manager===================-->
+        <div class="main__content top field" id="field">
+          <h2 class="title">Lĩnh vực</h2>
+
+          <div class="content__slider content__table" id="newField">
+            <div class="content__input input__field">
+              <label for="">MaLinhVuc:</label>
+              <input type="text" name="" id="id" class="input" /><br />
+              <label for="">TenLinhVuc:</label>
+              <input type="text" name="" id="fieldName" class="input" /><br />
+              <label for="">TheLoai:</label>
+              <input type="text" name="" id="category" class="input" /><br />
+              <label for="">NgayTao: </label>
+              <input type="text" name="" id="createAt" class="input" /><br />
+              <label for="">NgaySua:</label>
+              <input type="text" name="" id="updateAt" class="input" /><br />
+            </div>
+
+            <div class="content__check check__field">
+              <!-- HTML !-->
+              <button class="button-6" role="button" onclick="nhapMoiField()">
+                Mới</button
+              ><i class="fas fa-save icon"></i>
+              <button class="button-6" role="button">Trở về</button
+              ><i
+                class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="content__slider content__table" id="updateField">
+            <div class="content__input input__field">
+              <label for="">MaLinhVuc:</label>
+              <input type="text" name="" id="id" class="input" /><br />
+              <label for="">TenLinhVuc:</label>
+              <input type="text" name="" id="fieldName" class="input" /><br />
+              <label for="">TheLoai:</label>
+              <input type="text" name="" id="category" class="input" /><br />
+              <label for="">NgayTao: </label>
+              <input type="text" name="" id="createAt" class="input" /><br />
+              <label for="">NgaySua:</label>
+              <input type="text" name="" id="updateAt" class="input" /><br />
+            </div>
+
+            <div class="content__check check__field">
+              <!-- HTML !-->
+              <button class="button-6" role="button" onclick="dangky()">
+                Lưu</button
+              ><i class="fas fa-save icon"></i>
+              <button class="button-6" role="button">Trở về</button
+              ><i
+                class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="content__information">
+            <div class="content__display display__field">
+              <table>
+                <thead>
+                  <tr>
+                    <th>MaLinhVuc</th>
+                    <th>TenLinhVuc</th>
+                    <th>TheLoai</th>
+                    <th>NgayTao</th>
+                    <th>NgaySua</th>
+                    <th class="small"></th>
+                    <th class="small"></th>
+                  </tr>
+                </thead>
+                <tbody id="listfield"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--===============html for field 8manager===================-->
+        <div class="main__content top author" id="author">
+          <h2 class="title">Tác giả</h2>
+          <div class="content__slider content__table">
+            <div class="content__input input__author">
+              <label for="">id:</label>
+              <input type="text" name="" id="id" class="input" /><br />
+              <label for="">TenTacGia:</label>
+              <input type="text" name="" id="authorName" class="input" /><br />
+              <label for="">NamSinh:</label>
+              <input type="text" name="" id="birth" class="input" /><br />
+              <label for="">NamMat: </label>
+              <input type="text" name="" id="die" class="input" /><br />
+              <label for="">DiaChi:</label>
+              <input type="text" name="" id="address" class="input" /><br />
+            </div>
+
+            <div class="content__check check__author">
+              <!-- HTML !-->
+              <button class="button-6" role="button" onclick="nhapMoiAuthor()">Lưu</button
+              ><i class="fas fa-save icon"></i>
+              <button class="button-6" role="button">Trở về</button
+              ><i
+                class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="content__information">
+            <div class="content__display display__field">
+              <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>TenTacGia</th>
+                    <th>NamSinh</th>
+                    <th>NamMat</th>
+                    <th>DiaChi</th>
+                    <th class="small"></th>
+                  </tr>
+                </thead>
+                <tbody id="listauthor"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--===============html for author manager===================-->
+        <div class="main__content top publish" id="publish">
+          <h2 class="title">Thông tin nhà xuất bản</h2>
+          <div class="content__slider content__table">
+            <div class="content__input input__publish">
+              <label for="">SachId:</label>
+              <input type="text" name="" id="sachId" class="input" /><br />
+              <label for="">LanTaiBan:</label>
+              <input type="text" name="" id="lanTaiBan" class="input" /><br />
+              <label for="">NamXuatBan:</label>
+              <input type="text" name="" id="namXuatBan" class="input" /><br />
+              <label for="">NhaXuatBan: </label>
+              <input type="text" name="" id="nhaXuatBan" class="input" /><br />
+              <label for="">NgaySua:</label>
+              <input type="text" name="" id="ngaySua" class="input" /><br />
+            </div>
+
+            <div class="content__check check__publish">
+              <!-- HTML !-->
+              <button class="button-6" role="button" onclick="nhapMoiPublish()">Lưu</button
+              ><i class="fas fa-save icon"></i>
+              <button class="button-6" role="button">Trở về</button
+              ><i
+                class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="content__information">
+            <div class="content__display display__field">
+              <table>
+                <thead>
+                  <tr>
+                    <th>SachId</th>
+                    <th>LanTaiBan</th>
+                    <th>NamXuatBan</th>
+                    <th>NhaXuatBan</th>
+                    <th>NgaySua</th>
+                    <th class="small"></th>
+                  </tr>
+                </thead>
+                <tbody id="listpublish"></tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--===============html for publish manager===================-->
+        <div class="main__content top supplier" id="supplier">
+          <h2 class="title">Thông tin nhà cung cấp</h2>
+          <div class="content__slider content__table">
+            <div class="content__input input__supplier">
+              <label for="">SachId:</label>
+              <input type="text" name="" id="" class="input" /><br />
+              <label for="">TenNhaCungCap:</label>
+              <input type="text" name="" id="" class="input" /><br />
+              <label for="">SoLuong:</label>
+              <input type="text" name="" id="" class="input" /><br />
+              <label for="">GiaBan: </label>
+              <input type="text" name="" id="" class="input" /><br />
+              <label for="">NgaySua:</label>
+              <input type="text" name="" id="" class="input" /><br />
+            </div>
+
+            <div class="content__check check__supplier">
+              <!-- HTML !-->
+              <button class="button-6" role="button">Lưu</button
+              ><i class="fas fa-save icon"></i>
+              <button class="button-6" role="button">Trở về</button
+              ><i
+                class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+          <div class="content__information">
+            <div class="content__display display__field">
+              <table>
+                <thead>
+                  <tr>
+                    <th>SachId</th>
+                    <th>TenNhaCungCap</th>
+                    <th>SoLuong</th>
+                    <th>GiaBan</th>
+                    <th>NgaySua</th>
+                    <th class="small"></th>
+                  </tr>
+                </thead>
+                <tbody id="listsupplier"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--===============html for publish manager===================-->
+        <div class="main__content top display" id="display">
+          <h2 class="title">Danh sách thông tin sách</h2>
+          <div class="btn-show">
+            <div class="content__show left" id="images">
+              <div class="list__option-child list__option-show">
+                <div class="option__text-child" style="width: auto">
+                  Dạng ảnh
+                </div>
+              </div>
+            </div>
+
+            <div class="content__show right" id="tables">
+              <div class="list__option-child list__option-show">
+                <div class="option__text-child">Dạng bảng</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content__information information__display">
+            <!--khi ấn nút xem tales sẽ xuất hiện phần dưới-->
+            <div class="content__display content__tables" id="content__tables">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="th-small"></th>
+                    <th class="th-small">MaSach</th>
+                    <th>TenSach</th>
+                    <th class="th-small">SoLuong</th>
+                    <th class="th-small">GiaMua</th>
+                    <th>LinhVuc</th>
+                    <th>TacGia</th>
+                    <th>NhaXuatBan</th>
+                    <th>NhaCungCap</th>
+                    <th class="th-small"></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <!--khi ấn nút xem ảnh sẽ xuất hiện phần dưới-->
+            <div class="content__img" id="content__img"></div>
+          </div>
+
+          <div class="content__slider content__table display__btn">
+            <!-- <div class="content__input input__supplier">
+                  <label for="">id:</label>
+                  <input type="text" name="" id="" class="input" /><br />
+                  <label for="">TenNhaCungCap:</label>
+                  <input type="text" name="" id="" class="input" /><br />
+                  <label for="">NgayTao:</label>
+                  <input type="text" name="" id="" class="input" /><br />
+                  <label for="">NgaySua: </label>
+                  <input type="text" name="" id="" class="input" /><br />
+                  <label for="">SachId:</label>
+                  <input type="text" name="" id="" class="input" /><br />
+                </div> -->
+
+            <div class="content__check check__supplier">
+              <!-- <button class="button-6 button-search" role="button">Lưu</button
+                  >
+                  <i class="fas fa-save icon"></i> -->
+              <button class="button-6 button-search" role="button">
+                Trở về
+              </button>
+              <!-- <i
+                    class="fa-sharp fa-solid fa-arrow-left icon icon__back"
+                    aria-hidden="true"
+                  ></i> -->
+            </div>
+          </div>
+        </div>
+        <!--=================================================-->
+
+        <div class="main__footer bottom"></div>
+      </div>
+    </div>
+    <script>
+      // var e = document.getElementById("selectOpt");
+      // e.addEventListener("change", (event) => {
+      //   result = e.options[e.selectedIndex].text;
+      //   console.log(result);
+      // });
+      var listOptionChild =
+        document.getElementsByClassName("list__option-child");
+      var book = document.getElementById("book");
+      var field = document.getElementById("field");
+      var author = document.getElementById("author");
+      var publish = document.getElementById("publish");
+      var supplier = document.getElementById("supplier");
+      var listOption = document.getElementsByClassName("list__option");
+      var display = document.getElementById("display");
+      listOption[0].onclick = function () {
+        book.style.display = "block";
+        author.style.display = "none";
+        field.style.display = "none";
+        publish.style.display = "none";
+        supplier.style.display = "none";
+        display.style.display = "none";
+      };
+      listOption[1].onclick = function () {
+        book.style.display = "none";
+        author.style.display = "none";
+        field.style.display = "none";
+        publish.style.display = "none";
+        supplier.style.display = "none";
+        display.style.display = "block";
+      };
+
+      listOptionChild[0].onclick = function () {
+        book.style.display = "block";
+        author.style.display = "none";
+        field.style.display = "none";
+        publish.style.display = "none";
+        supplier.style.display = "none";
+        display.style.display = "none";
+      };
+      listOptionChild[1].onclick = function () {
+        book.style.display = "none";
+        author.style.display = "none";
+        field.style.display = "block";
+        publish.style.display = "none";
+        supplier.style.display = "none";
+        display.style.display = "none";
+      };
+      listOptionChild[2].onclick = function () {
+        book.style.display = "none";
+        author.style.display = "block";
+        field.style.display = "none";
+        publish.style.display = "none";
+        display.style.display = "none";
+        supplier.style.display = "none";
+      };
+      listOptionChild[3].onclick = function () {
+        book.style.display = "none";
+        author.style.display = "none";
+        field.style.display = "none";
+        publish.style.display = "block";
+        display.style.display = "none";
+        supplier.style.display = "none";
+      };
+      listOptionChild[4].onclick = function () {
+        book.style.display = "none";
+        author.style.display = "none";
+        field.style.display = "none";
+        publish.style.display = "none";
+        display.style.display = "none";
+        supplier.style.display = "block";
+      };
+
+      var displayTables = document.getElementById("content__tables");
+      var displayImages = document.getElementById("content__img");
+      var images = document.getElementById("images");
+      var tables = document.getElementById("tables");
+
+      console.log(listOptionChild);
+      tables.onclick = function () {
+        displayImages.style.display = "none";
+        displayTables.style.display = "block";
+      };
+      images.onclick = function () {
+        displayImages.style.display = "block";
+        displayTables.style.display = "none";
+      };
+    </script>
+    <script>
+      /*Hàm để nhập mới các trường field*/
+      function nhapMoiField() {
+        let fieldName = document.getElementById("fieldName").value;
+        let category = document.getElementById("category").value;
+        let updateAt = document.getElementById("updateAt").value;
+        let data = {
+          fieldName: fieldName,
+          category: category,
+          updateAt: updateAt,
+        };
+        let url = "http://localhost:3000/field";
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => response.json())
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
+      }
+      /*Hàm để nhập mới author*/
+      function nhapMoiAuthor() {
+        let id = document.getElementById("id").value;
+        let authorName = document.getElementById("authorName").value;
+        let birth = document.getElementById("birth").value;
+        let die = document.getElementById("die").value;
+        let address = document.getElementById("address").value;
+
+        let data = {
+          id: id,
+          authorName: authorName,
+          birth: birth,
+          die: die,
+          address: address,
+        };
+        let url = "http://localhost:3000/author";
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => response.json())
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
+      }
+      /*Hàm để nhập mới publish*/  
+      function nhapMoiPublish() {
+        let sachId = document.getElementById("sachId").value;
+        let lanTaiBan = document.getElementById("lanTaiBan").value;
+        let namXuatBan = document.getElementById("namXuatBan").value;
+        let nhaXuatBan = document.getElementById("nhaXuatBan").value;
+        let ngaySua = document.getElementById("ngaySua").value;
+
+        let data = {
+          sachId: sachId,
+          lanTaiBan: lanTaiBan,
+          namXuatBan: namXuatBan,
+          namXuatBan: nhaXuatBan,
+          updateAt: ngaySua,
+        };
+        let url = "http://localhost:3000/publish";
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => response.json())
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
+      }
+      /*Hàm để nhập mới supplier*/
+      function nhapMoiPublish() {
+        let sachId = document.getElementById("sachId").value;
+        let lanTaiBan = document.getElementById("lanTaiBan").value;
+        let namXuatBan = document.getElementById("namXuatBan").value;
+        let nhaXuatBan = document.getElementById("nhaXuatBan").value;
+        let ngaySua = document.getElementById("ngaySua").value;
+
+        let data = {
+          sachId: sachId,
+          lanTaiBan: lanTaiBan,
+          namXuatBan: namXuatBan,
+          namXuatBan: nhaXuatBan,
+          updateAt: ngaySua,
+        };
+        let url = "http://localhost:3000/author";
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+        })
+          .then((response) => response.json())
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
+      }
+      
+      /*Hàm để lấy giá trị các trường field*/
+      fetch("http://localhost:3000/field")
+        .then(function (res) {
+          console.log(res); //xem thử trong console của trình duyệt nhé
+          if (!res.ok) {
+            throw new Error("Lỗi = " + res.status);
+          }
+          return res.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          let kq = document.getElementById("listfield");
+          data.forEach((e) => {
+            kq.innerHTML += `
+                  <tr  class="fieldItem">
+                    <td>${e.id}</td>
+                    <td>${e.fieldName}</td>
+                    <td>${e.category}</td>
+                    <td>${e.createAt}</td>
+                    <td>${e.updateAt}</td>
+                    <td class="abc td-small td-update"><a href="#" class="field__update">edit</a></td> 
+                    <td class="abc td-small td-delete"><a href="/field/${e.id}"  class="field__delete">delete</a></td> 
+                  </tr>  
+                  `;
+          });
+        })
+        .catch(function (error) {
+          console.log("Lỗi: ", error);
+        });
+
+      /*Hàm để lấy giá trị các trường author*/
+      fetch("http://localhost:3000/author")
+        .then(function (res) {
+          console.log(res); //xem thử trong console của trình duyệt nhé
+          if (!res.ok) {
+            throw new Error("Lỗi = " + res.status);
+          }
+          return res.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          let kq = document.getElementById("listauthor");
+          data.forEach((e) => {
+            kq.innerHTML += `
+                  <tr  class="fieldItem">
+                    <td>${e.id}</td>
+                    <td>${e.authorName}</td>
+                    <td>${e.birth}</td>
+                    <td>${e.die}</td>
+                    <td>${e.address}</td>
+                    <td class="abc td-small td-update"><a href="#" class="field__update">edit</a></td> 
+                    <td class="abc td-small td-delete"><a href="/field/${e.id}"  class="field__delete">delete</a></td> 
+                  </tr>  
+                  `;
+          });
+        })
+        .catch(function (error) {
+          console.log("Lỗi: ", error);
+        });
+    
+      /*Hàm để lấy giá trị các trường publish*/
+      fetch("http://localhost:3000/publish")
+        .then(function (res) {
+          console.log(res); //xem thử trong console của trình duyệt nhé
+          if (!res.ok) {
+            throw new Error("Lỗi = " + res.status);
+          }
+          return res.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          let kq = document.getElementById("listpublish");
+          data.forEach((e) => {
+            kq.innerHTML += `
+                  <tr  class="fieldItem">
+                    <td>${e.sachId}</td>
+                    <td>${e.lanTaiBan}</td>
+                    <td>${e.namXuatBan}</td>
+                    <td>${e.nhaXuatBan}</td>
+                    <td>${e.updateAt}</td>
+                    <td class="abc td-small td-update"><a href="#" class="field__update">edit</a></td> 
+                    <td class="abc td-small td-delete"><a href="/field/${e.id}"  class="field__delete">delete</a></td> 
+                  </tr>  
+                  `;
+          });
+        })
+        .catch(function (error) {
+          console.log("Lỗi: ", error);
+        });
+  
+
+    </script>
+    <script>
+      let fieldItem = document.getElementsByClassName('fieldItem')
+
+      console.log(fieldItem)
+
+      var arr = [];
+      [].push.apply(arr, HTMLCollection);
+      console.log(arr)
+    </script>
+  </body>
+</html>
